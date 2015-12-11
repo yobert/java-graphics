@@ -26,7 +26,7 @@ public class Main implements GLEventListener, KeyListener {
 		frame.add(canvas);
 		frame.setVisible(true);
 
-        Main mainInstance = new Main();
+		Main mainInstance = new Main();
 
 		frame.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
@@ -37,8 +37,8 @@ public class Main implements GLEventListener, KeyListener {
 		canvas.addGLEventListener(mainInstance);
 		frame.addKeyListener(mainInstance);
 
-        FPSAnimator animator = new FPSAnimator(canvas, 60);
-        animator.start();
+		FPSAnimator animator = new FPSAnimator(canvas, 60);
+		animator.start();
 	}
 
 	public void keyPressed(KeyEvent e) {
@@ -62,30 +62,30 @@ public class Main implements GLEventListener, KeyListener {
 
 	public void display(GLAutoDrawable drawable) {
 
-        double speed = 0.01;
+		double speed = 0.01;
 
-        if(keys[KeyEvent.VK_DOWN]) {
-        	y -= speed;
-        }
-        if(keys[KeyEvent.VK_UP]) {
-        	y += speed;
-        }
-        if(keys[KeyEvent.VK_LEFT]) {
-        	x -= speed;
-        }
-        if(keys[KeyEvent.VK_RIGHT]) {
-        	x += speed;
-        }
+		if(keys[KeyEvent.VK_DOWN]) {
+			y -= speed;
+		}
+		if(keys[KeyEvent.VK_UP]) {
+			y += speed;
+		}
+		if(keys[KeyEvent.VK_LEFT]) {
+			x -= speed;
+		}
+		if(keys[KeyEvent.VK_RIGHT]) {
+			x += speed;
+		}
 
 
-        GL2 gl = drawable.getGL().getGL2();
+		GL2 gl = drawable.getGL().getGL2();
 
-        gl.glClear(GL.GL_COLOR_BUFFER_BIT);
+		gl.glClear(GL.GL_COLOR_BUFFER_BIT);
 
-        gl.glColor3f(1, 1, 1);
-        gl.glBegin(gl.GL_POINTS);
-        gl.glVertex3d(x, y, 0.0);
-        gl.glEnd();
+		gl.glColor3f(1, 1, 1);
+		gl.glBegin(gl.GL_POINTS);
+		gl.glVertex3d(x, y, 0.0);
+		gl.glEnd();
 
 	}
 
